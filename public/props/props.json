@@ -1,0 +1,130 @@
+[
+  {
+    "id": "web-kelas",
+    "file": "gavel.glb",
+    "name": "Web Kelas",
+    "nameEn": "Portal Kelas HK A 2025 · UINSSC",
+    "category": "Portal Utama Kelas",
+    "blurb": "Rumah digital Hukum Keluarga Kelas A Angkatan 2025 — UIN Siber Syekh Nurjati Cirebon. Jelajahi profil kelas, struktur pengurus, dan keluarga besar Chapter of Us.",
+    "badge": "HK A 2025 · UIN Siber Syekh Nurjati Cirebon",
+    "ctaLabel": "Buka Portal Kelas ↗",
+    "url": "https://kelas-hk-a-uinssc-2025.vercel.app/",
+    "details": [
+      {
+        "label": "Kampus & Prodi",
+        "value": "Hukum Keluarga Kelas A — UIN Siber Syekh Nurjati Cirebon (UINSSC)"
+      },
+      {
+        "label": "Angkatan & Identitas",
+        "value": "Angkatan 2025 · Chapter of Us (@chapterofushk_a)"
+      },
+      {
+        "label": "Portal Resmi",
+        "value": "kelas-hk-a-uinssc-2025.vercel.app"
+      }
+    ]
+  },
+  {
+    "id": "galeri",
+    "file": "galeri.glb",
+    "name": "Galeri Kelas",
+    "nameEn": "Arsip Memori · Chapter of Us",
+    "category": "Folder Dokumentasi",
+    "blurb": "Setiap diskusi kelas, praktikum peradilan semu, hingga tawa selepas kuliah tersimpan rapi di sini. Akses langsung folder foto dan video HK A 2025.",
+    "badge": "Dokumentasi Foto & Video",
+    "ctaLabel": "Buka Folder Galeri",
+    "url": "",
+    "details": [
+      {
+        "label": "Momen Perkuliahan",
+        "value": "Dokumentasi kegiatan belajar, presentasi, dan diskusi di kelas"
+      },
+      {
+        "label": "Praktikum & Acara",
+        "value": "Foto sidang semu, seminar hukum, dan kegiatan luar kampus"
+      },
+      {
+        "label": "Kebersamaan HK A",
+        "value": "Album buka bersama, makrab, dan cerita perjalanan tiap semester"
+      }
+    ],
+    "note": "Tempel link Google Drive folder galeri kelas pada kolom \"url\" di public/props/props.json agar langsung terbuka saat diklik."
+  },
+  {
+    "id": "materi",
+    "file": "kitab.glb",
+    "name": "Bank Materi",
+    "nameEn": "Literatur & Kitab Hukum",
+    "category": "Arsip Akademik",
+    "blurb": "Kumpulan RPS, makalah kelompok, jurnal, serta rujukan utama Hukum Keluarga—mulai dari UU Perkawinan, Kompilasi Hukum Islam, hingga Hukum Perdata.",
+    "badge": "RPS · Makalah · Regulasi",
+    "ctaLabel": "Buka Bank Materi",
+    "url": "",
+    "details": [
+      {
+        "label": "Regulasi Utama",
+        "value": "UU No. 1 Tahun 1974 jo. UU No. 16 Tahun 2019, KHI, & KUHPerdata"
+      },
+      {
+        "label": "Arsip Perkuliahan",
+        "value": "RPS dosen, slide presentasi, makalah kelompok, & catatan UTS/UAS"
+      },
+      {
+        "label": "Referensi Ilmiah",
+        "value": "E-book fikih munakahat, hukum waris, peradilan agama, & jurnal"
+      }
+    ],
+    "note": "Tempel link Google Drive materi kelas pada kolom \"url\" di public/props/props.json untuk akses satu klik."
+  },
+  {
+    "id": "jadwal",
+    "file": "jadwal.glb",
+    "name": "Jadwal Kuliah",
+    "nameEn": "Agenda & Kelompok Diskusi",
+    "category": "Ruang Akademik",
+    "blurb": "Pantau jadwal mata kuliah berjalan, urutan kelompok presentasi mingguan, dan pengumuman agenda kelas supaya selalu siap sebelum masuk ruang kuliah.",
+    "badge": "Semester Berjalan · HK A",
+    "ctaLabel": "Lihat Jadwal Kelas",
+    "url": "",
+    "details": [
+      {
+        "label": "Jadwal Mingguan",
+        "value": "Daftar mata kuliah, jam masuk, ruang kelas, dan dosen pengampu"
+      },
+      {
+        "label": "Kelompok Presentasi",
+        "value": "Urutan pemateri diskusi mingguan dan pembagian topik makalah"
+      },
+      {
+        "label": "Pengumuman Kelas",
+        "value": "Info perubahan jadwal, kuliah pengganti, dan tenggat tugas"
+      }
+    ],
+    "note": "Dapat dihubungkan ke Google Sheets / Notion jadwal kelas melalui kolom \"url\" di public/props/props.json."
+  },
+  {
+    "id": "instagram",
+    "file": "instagram.glb",
+    "name": "Instagram Kelas",
+    "nameEn": "@chapterofushk_a",
+    "category": "Jejak Sosial Resmi",
+    "blurb": "Ikuti cerita terbaru, rekap kegiatan, dan potret keseharian keluarga besar Hukum Keluarga Kelas A 2025 UINSSC langsung di akun resmi Chapter of Us.",
+    "badge": "@chapterofushk_a",
+    "ctaLabel": "Kunjungi Instagram ↗",
+    "url": "https://www.instagram.com/chapterofushk_1a?vrfl=ZjVuN3I0aDBpOTg5",
+    "details": [
+      {
+        "label": "Identitas Akun",
+        "value": "Chapter of Us — Hukum Keluarga Kelas A 2025 (@chapterofushk_a)"
+      },
+      {
+        "label": "Kampus",
+        "value": "UIN Siber Syekh Nurjati Cirebon (UINSSC)"
+      },
+      {
+        "label": "Konten Utama",
+        "value": "Highlight kegiatan kelas, profil anggota, & dokumentasi semester"
+      }
+    ]
+  }
+]
