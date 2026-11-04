@@ -22,11 +22,11 @@ const FRAME = {
     sideways: -0.04,
   },
   mobile: {
-    headroom: 0.28,
-    crop: 0.82,
-    bubble: 0.102,
-    lift: 1.06,
-    sideways: -0.14,
+    headroom: 0.14,
+    crop: 0.9,
+    bubble: 0.104,
+    lift: 1.08,
+    sideways: -0.18,
   },
 };
 

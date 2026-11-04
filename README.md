@@ -13,8 +13,8 @@ Website interaktif 3D **Chapter of Us — Hukum Keluarga Kelas A Angkatan 2025 (
    - Jalankan di terminal: `npm.cmd run dev`
 
 ## Status Tautan Menu Saat Ini (`public/props/props.json`)
-- **Web Kelas** (`gavel.glb`) → Terhubung ke **https://kelas-hk-a-uinssc-2025.vercel.app/**
-- **Instagram Kelas** (`instagram.glb`) → Terhubung ke **@chapterofushk_a** (`https://www.instagram.com/chapterofushk_1a?vrfl=ZjVuN3I0aDBpOTg5`)
+- **Web Kelas** (`timbangan.glb`) → Terhubung ke **https://kelas-hk-a-uinssc-2025.vercel.app/**
+- **Instagram Kelas** (`gavel.glb`) → Terhubung ke **@chapterofushk_a** (`https://www.instagram.com/chapterofushk_1a?vrfl=ZjVuN3I0aDBpOTg5`)
 - **Galeri Kelas** (`galeri.glb`) → Siap diisi link Google Drive folder galeri pada kolom `"url"`
 - **Bank Materi** (`kitab.glb`) → Siap diisi link Google Drive materi/RPS pada kolom `"url"`
 - **Jadwal Kuliah** (`jadwal.glb`) → Siap diisi link jadwal/kelompok pada kolom `"url"`

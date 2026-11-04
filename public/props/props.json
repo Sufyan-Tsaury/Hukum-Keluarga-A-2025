@@ -1,7 +1,7 @@
 [
   {
     "id": "web-kelas",
-    "file": "gavel.glb",
+    "file": "timbangan.glb",
     "name": "Web Kelas",
     "nameEn": "Portal Kelas HK A 2025 · UINSSC",
     "category": "Portal Utama Kelas",
@@ -104,7 +104,7 @@
   },
   {
     "id": "instagram",
-    "file": "instagram.glb",
+    "file": "gavel.glb",
     "name": "Instagram Kelas",
     "nameEn": "@chapterofushk_a",
     "category": "Jejak Sosial Resmi",

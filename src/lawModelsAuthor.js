@@ -789,11 +789,11 @@ function buildEmblemStar() {
 
 export async function generateAll3DAssets() {
   const specs = [
-    { id: "web-kelas", file: "gavel.glb", build: buildGavel },
+    { id: "web-kelas", file: "timbangan.glb", build: buildScales },
     { id: "galeri", file: "galeri.glb", build: buildGaleri },
     { id: "materi", file: "kitab.glb", build: buildKitab },
     { id: "jadwal", file: "jadwal.glb", build: buildJadwal },
-    { id: "instagram", file: "instagram.glb", build: buildScales },
+    { id: "instagram", file: "gavel.glb", build: buildGavel },
     { id: "star", file: "emblem_star.glb", build: buildEmblemStar },
   ];
 

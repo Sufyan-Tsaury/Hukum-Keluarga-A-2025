@@ -431,7 +431,12 @@ function App() {
                     <h2>
                       {item.name.split(" ").map((word, i, arr) => (
                         <React.Fragment key={i}>
-                          {i > 0 && <br />}
+                          {i > 0 && (
+                            <>
+                              {" "}
+                              <br className="desktop-br" />
+                            </>
+                          )}
                           {word}
                           {i === arr.length - 1 ? "." : ""}
                         </React.Fragment>
@@ -487,7 +492,7 @@ function App() {
                 </button>
               </div>
               <p className="swipe-hint">
-                Klik simbol 3D di atas tangan atau geser untuk pindah menu
+                Ketuk objek 3D di atas tangan atau geser untuk pindah menu
               </p>
             </div>
           </div>

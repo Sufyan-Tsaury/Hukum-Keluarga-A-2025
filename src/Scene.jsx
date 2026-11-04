@@ -92,8 +92,19 @@ const SHOWCASE = {
   side: -0.17,
   z: 0.5,
   scale: 0.6,
-  upMobile: 1.12,
+  upMobile: 1.14,
+  sideMobile: -0.62,
+  scaleMobile: 0.44,
 };
+
+function getShowcasePosition(mobile, out) {
+  const r = s.bubbleRadius;
+  return out.set(
+    s.palmX + r * (mobile ? SHOWCASE.sideMobile : SHOWCASE.side),
+    s.palmY + r * (mobile ? SHOWCASE.upMobile : SHOWCASE.up),
+    SHOWCASE.z,
+  );
+}
 
 function Prop({ item, index, count, progress, onCycleProp }) {
   const { gl } = useThree();
@@ -147,15 +158,11 @@ function Prop({ item, index, count, progress, onCycleProp }) {
     if (p > JOURNEY.dollStart || selected) {
       const rise = range(p, JOURNEY.dollStart, JOURNEY.dollEnd);
       const r = s.bubbleRadius;
-      showcase.set(
-        s.palmX + r * SHOWCASE.side - (mobile ? 0.2 : 0),
-        s.palmY + r * (mobile ? SHOWCASE.upMobile : SHOWCASE.up),
-        SHOWCASE.z,
-      );
+      getShowcasePosition(mobile, showcase);
       if (!s.reduced) {
         showcase.x +=
           Math.sin(time * 0.67 + index * 0.6) * r * (mobile ? 0.035 : 0.06);
-        showcase.y += Math.sin(time * 0.93 + index * 0.7) * r * 0.1;
+        showcase.y += Math.sin(time * 0.93 + index * 0.7) * r * 0.08;
         showcase.z += Math.sin(time * 0.58 + index) * 0.04;
       }
       target.lerp(showcase, rise);
@@ -164,7 +171,8 @@ function Prop({ item, index, count, progress, onCycleProp }) {
       const scale =
         lerp(
           heroScale,
-          (mobile ? 0.45 : SHOWCASE.scale) * (0.72 + weight * 0.28),
+          (mobile ? SHOWCASE.scaleMobile : SHOWCASE.scale) *
+            (0.72 + weight * 0.28),
           rise,
         ) *
         (1 + hoverBoost);
@@ -273,12 +281,7 @@ function ShowcaseHitTarget({ mobile, onCycleProp }) {
       s.propHover = 0;
       if (!s.bubbleHover) gl.domElement.style.cursor = "default";
     }
-    const r = s.bubbleRadius;
-    ref.current.position.set(
-      s.palmX + r * SHOWCASE.side - (mobile ? 0.2 : 0),
-      s.palmY + r * (mobile ? SHOWCASE.upMobile : SHOWCASE.up),
-      SHOWCASE.z,
-    );
+    getShowcasePosition(mobile, ref.current.position);
   });
   return (
     <mesh
@@ -326,14 +329,13 @@ function FloatingJusticeStars() {
     ref.current.children.forEach((star, i) => {
       const angle = (i * Math.PI * 2) / 5 + t * 0.14;
       const mobile = innerWidth < 700;
+      const r = s.bubbleRadius;
+      const cx = s.palmX + r * (mobile ? SHOWCASE.sideMobile : SHOWCASE.side);
+      const cy = s.palmY + r * (mobile ? SHOWCASE.upMobile : SHOWCASE.up);
       star.position.set(
-        s.palmX -
-          (mobile ? 0.2 : 0) +
-          Math.cos(angle) * (mobile ? 0.38 : 0.7),
-        s.palmY +
-          s.bubbleRadius * 1.02 +
-          Math.sin(angle) * (mobile ? 0.32 : 0.46),
-        0.06 + Math.sin(angle) * 0.24,
+        cx + Math.cos(angle) * (mobile ? 0.36 : 0.68),
+        cy + Math.sin(angle) * (mobile ? 0.3 : 0.46),
+        0.18 + Math.sin(angle) * 0.22,
       );
       star.rotation.set(0, t * 0.6 + i, Math.sin(t * 0.4 + i) * 0.2);
       star.scale.setScalar((0.06 + (i % 2) * 0.018) * reveal);
@@ -462,10 +464,12 @@ function World({ items, onEnterBubble, onCycleProp }) {
     if (heroEnv.environment) scene.environment = heroEnv.environment;
 
     const zoom = range(p, JOURNEY.zoomStart, JOURNEY.zoomEnd);
-    const K = mobile ? 0.74 : 0.72;
-    const aimX = s.palmX * (mobile ? 0.82 : 0.9) * K;
-    const aimY = (layout.palmY + layout.radius * (mobile ? 0.5 : 0.42)) * K;
-    const endZ = mobile ? 3.7 : 3.3;
+    const K = mobile ? 0.66 : 0.72;
+    const aimX = s.palmX * (mobile ? 0.72 : 0.9) * K;
+    const aimY = mobile
+      ? layout.palmY + layout.radius * 0.46
+      : (layout.palmY + layout.radius * 0.42) * K;
+    const endZ = mobile ? 4.02 : 3.3;
     target.set(lerp(0, aimX, zoom), lerp(0, aimY, zoom), lerp(6, endZ, zoom));
     look.set(lerp(0, aimX, zoom), lerp(0, aimY, zoom), 0);
     camera.position.lerp(target, k);
