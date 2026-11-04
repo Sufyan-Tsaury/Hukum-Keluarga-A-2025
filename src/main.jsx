@@ -302,14 +302,7 @@ function App() {
                 ⚖
               </span>
             </a>
-            <a
-              className="ig-pill"
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @chapterofushk_a <span aria-hidden="true">↗</span>
-            </a>
+           
           </header>
 
           {fallback && (
