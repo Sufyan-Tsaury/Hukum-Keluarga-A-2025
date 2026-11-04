@@ -363,9 +363,7 @@ function App() {
               Scroll pelan. Masuk ke ruang kelas.
             </a>
             {!fallback && (
-              <span className="bubble-hint">
-                <span className="hint-dot" /> Orb keadilan bisa disentuh
-              </span>
+              
             )}
             <span>UIN Siber Syekh Nurjati Cirebon · HK A</span>
           </div>
@@ -484,9 +482,7 @@ function App() {
                   →
                 </button>
               </div>
-              <p className="swipe-hint">
-                Ketuk objek 3D di atas tangan atau geser untuk pindah menu
-              </p>
+          
             </div>
           </div>
         </section>
