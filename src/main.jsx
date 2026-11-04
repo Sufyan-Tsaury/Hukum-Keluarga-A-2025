@@ -362,9 +362,7 @@ function App() {
               </span>{" "}
               Scroll pelan. Masuk ke ruang kelas.
             </a>
-            {!fallback && (
-              
-            )}
+            
             <span>UIN Siber Syekh Nurjati Cirebon · HK A</span>
           </div>
 
@@ -482,7 +480,7 @@ function App() {
                   →
                 </button>
               </div>
-          
+              
             </div>
           </div>
         </section>
