@@ -21,10 +21,11 @@ import {
 } from "./Hero3D";
 
 const lerp = THREE.MathUtils.lerp;
+const BASE = import.meta.env.BASE_URL;
 
 function configureLoader(loader, gl) {
   loader.setKTX2Loader(
-    new KTX2Loader().setTranscoderPath("/basis/").detectSupport(gl),
+    new KTX2Loader().setTranscoderPath(BASE + "basis/").detectSupport(gl),
   );
 }
 
@@ -42,14 +43,17 @@ class ModelBoundary extends React.Component {
 }
 
 function FallbackModel() {
-  const { scene } = useGLTF("/props/placeholder.glb");
+  const { scene } = useGLTF(BASE + "props/placeholder.glb");
   return <primitive object={scene.clone()} />;
 }
 
 function Model({ item }) {
   const { gl } = useThree();
-  const { scene } = useGLTF("/props/" + item.file, "/draco/", true, (loader) =>
-    configureLoader(loader, gl),
+  const { scene } = useGLTF(
+    BASE + "props/" + item.file,
+    BASE + "draco/",
+    true,
+    (loader) => configureLoader(loader, gl),
   );
   const clone = useMemo(() => {
     const obj = scene.clone(true);
@@ -353,14 +357,16 @@ function FloatingJusticeStars() {
 function Atmosphere({ progress }) {
   const ref = useRef();
   const texture = useTexture(
-    innerWidth < 700 ? "/textures/scene-mobile.jpg" : "/textures/scene.jpg",
+    innerWidth < 700
+      ? BASE + "textures/scene-mobile.jpg"
+      : BASE + "textures/scene.jpg",
   );
   texture.colorSpace = THREE.SRGBColorSpace;
   const suffix = innerWidth < 700 ? "-mobile" : "";
   const [depthMap, normalMap, noiseMap] = useTexture([
-    "/textures/scene-depth" + suffix + ".jpg",
-    "/textures/scene-normal" + suffix + ".jpg",
-    "/textures/noise.jpg",
+    BASE + "textures/scene-depth" + suffix + ".jpg",
+    BASE + "textures/scene-normal" + suffix + ".jpg",
+    BASE + "textures/noise.jpg",
   ]);
   [depthMap, normalMap, noiseMap].forEach((t) => {
     t.colorSpace = THREE.NoColorSpace;
@@ -434,8 +440,11 @@ function World({ items, onEnterBubble, onCycleProp }) {
 
   useEffect(() => {
     items.forEach((item) =>
-      useGLTF.preload("/props/" + item.file, "/draco/", true, (loader) =>
-        configureLoader(loader, gl),
+      useGLTF.preload(
+        BASE + "props/" + item.file,
+        BASE + "draco/",
+        true,
+        (loader) => configureLoader(loader, gl),
       ),
     );
   }, [gl, items]);

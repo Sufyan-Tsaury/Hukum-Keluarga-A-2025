@@ -7,6 +7,7 @@ import { scrollState as s } from "./scrollState";
 import { CHAR_METRICS } from "./characterMetrics";
 
 const lerp = THREE.MathUtils.lerp;
+const BASE = import.meta.env.BASE_URL;
 
 export const FIELD_Z = -14;
 export const CHAR_Z = 0;
@@ -147,10 +148,10 @@ export function HeroField({ mobile }) {
   const { camera, size } = useThree();
   const suffix = mobile ? "-mobile" : "";
   const [field, depth, normal, noise] = useTexture([
-    "/textures/scene" + suffix + ".jpg",
-    "/textures/scene-depth" + suffix + ".jpg",
-    "/textures/scene-normal" + suffix + ".jpg",
-    "/textures/noise.jpg",
+    BASE + "textures/scene" + suffix + ".jpg",
+    BASE + "textures/scene-depth" + suffix + ".jpg",
+    BASE + "textures/scene-normal" + suffix + ".jpg",
+    BASE + "textures/noise.jpg",
   ]);
   useMemo(() => {
     field.colorSpace = THREE.SRGBColorSpace;
@@ -255,9 +256,9 @@ export function HeroCharacter({ layout, mobile }) {
   const mesh = useRef();
   const material = useRef();
   const [map, depth, normal] = useTexture([
-    "/character.png",
-    "/textures/character-depth.jpg",
-    "/textures/character-normal.jpg",
+    BASE + "character.png",
+    BASE + "textures/character-depth.jpg",
+    BASE + "textures/character-normal.jpg",
   ]);
   useMemo(() => {
     map.colorSpace = THREE.SRGBColorSpace;

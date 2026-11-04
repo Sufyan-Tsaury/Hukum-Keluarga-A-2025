@@ -11,6 +11,7 @@ import "./style.css";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+const BASE = import.meta.env.BASE_URL;
 const INSTAGRAM_URL =
   "https://www.instagram.com/chapterofushk_1a?vrfl=ZjVuN3I0aDBpOTg5";
 
@@ -45,7 +46,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("/props/props.json")
+    fetch(BASE + "props/props.json")
       .then((r) => r.json())
       .then((data) => {
         setItems(data);
@@ -278,9 +279,13 @@ function App() {
               <picture>
                 <source
                   media="(max-width: 700px)"
-                  srcSet="/textures/scene-mobile.jpg"
+                  srcSet={BASE + "textures/scene-mobile.jpg"}
                 />
-                <img src="/textures/scene.jpg" alt="" fetchPriority="high" />
+                <img
+                  src={BASE + "textures/scene.jpg"}
+                  alt=""
+                  fetchPriority="high"
+                />
               </picture>
               <div className="hero-light" />
             </div>
@@ -311,7 +316,7 @@ function App() {
             <div className="character-wrap">
               <img
                 className="character"
-                src="/character.png"
+                src={BASE + "character.png"}
                 alt="Sosok Dewi Themis modern memegang pedang keadilan dengan telapak tangan terbuka"
                 fetchPriority="high"
               />
@@ -343,7 +348,7 @@ function App() {
           {fallback && (
             <img
               className="static-bubble"
-              src="/bubble.png"
+              src={BASE + "bubble.png"}
               alt=""
               aria-hidden="true"
             />
@@ -404,7 +409,7 @@ function App() {
                 >
                   <img
                     className="zoom-card-thumb"
-                    src={`/editorial/${item.id}.png`}
+                    src={`${BASE}editorial/${item.id}.png`}
                     alt=""
                   />
                 </button>
@@ -512,7 +517,7 @@ function App() {
             <p className="english">{panel.nameEn}</p>
             <div className="panel-mark" aria-hidden="true">
               <img
-                src={`/editorial/${panel.id}.png`}
+                src={`${BASE}editorial/${panel.id}.png`}
                 alt=""
                 className="panel-thumb"
               />
