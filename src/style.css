@@ -479,10 +479,13 @@ h3,
 }
 
 .zoom-card-thumb {
-  width: 44px;
-  height: 52px;
-  aspect-ratio: 11 / 13;
+  width: 48px;
+  height: 48px;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
   pointer-events: none;
 }
 
@@ -983,16 +986,20 @@ h3,
     gap: 8px;
   }
   .zoom-card {
-    width: 54px;
-    height: 56px;
-    padding: 5px;
+    width: 55px;
+    height: 57px;
+    padding: 3px;
     border-radius: 13px;
-    background: rgba(17, 11, 10, 0.84);
-    border-color: rgba(247, 242, 236, 0.34);
+    background: rgba(17, 11, 10, 0.88);
+    border-color: rgba(247, 242, 236, 0.38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .zoom-card-thumb {
-    width: 38px;
-    height: 44px;
+    width: 45px;
+    height: 45px;
+    aspect-ratio: 1 / 1;
   }
   .detail-panel {
     padding: 64px 22px 28px;

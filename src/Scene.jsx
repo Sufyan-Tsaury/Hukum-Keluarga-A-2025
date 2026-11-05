@@ -543,8 +543,12 @@ function World({ items, onEnterBubble, onCycleProp }) {
 }
 
 export default function Scene(props) {
-  const [dpr, setDpr] = useState(innerWidth < 700 ? 1.5 : 1.75),
-    [active, setActive] = useState(true);
+  const [dpr, setDpr] = useState(() =>
+    typeof window !== "undefined"
+      ? Math.min(window.devicePixelRatio || 2, 2)
+      : 2,
+  );
+  const [active, setActive] = useState(true);
   useEffect(() => {
     const onVisibility = () => setActive(!document.hidden);
     document.addEventListener("visibilitychange", onVisibility);
@@ -556,13 +560,13 @@ export default function Scene(props) {
         camera={{ position: [0, 0, 6], fov: 45, near: 0.05, far: 100 }}
         dpr={dpr}
         frameloop={active ? "always" : "never"}
-        gl={{ alpha: true, antialias: true }}
+        gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
         onCreated={({ gl }) => {
           gl.outputColorSpace = THREE.SRGBColorSpace;
           gl.domElement.addEventListener("webglcontextlost", props.onFail);
         }}
       >
-        <PerformanceMonitor onDecline={() => setDpr(1)} />
+        <PerformanceMonitor onDecline={() => setDpr(1.5)} />
         <Suspense fallback={null}>
           <World {...props} />
         </Suspense>
